@@ -9,9 +9,11 @@ Fronend -> React Js
 
 02) Open the project in a text editor.
 
-03) Change API key with your key.
-context->WeatherContext.jsx->
-EX: apiKey = "7d51b8e551c4711d9f56d8f910d4bca1";
+03) Change API key with your key or use this inside .env file.
+EX: 
+REACT_APP_WEATHER_API_KEY=7d51b8e551c4711d9f56d8f910d4bca1
+REACT_APP_WEATHER_API_URL=http://api.openweathermap.org/data/2.5/group
+
 
 04) Run project(`npm run dev` and use URL http://localhost:<YOUR PORT>/).
 

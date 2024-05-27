@@ -6,17 +6,27 @@ import { Link } from "react-router-dom";
 
 const Body = () => {
   const { weatherData } = useContext(WeatherContext);
-  const backgroundColors = ["#388ee7", "#6249cc", "#40b681", "#de944e", "#9c3a3a"];
+  const backgroundColors = [
+    "#388ee7",
+    "#6249cc",
+    "#40b681",
+    "#de944e",
+    "#9c3a3a",
+  ];
 
   return (
     <div className="app-body">
       <div className="col">
         {weatherData.map((city, index) => (
           <div className="weather">
-
             <Link to={`/details/${city.id}`}>
-              
-              <div className="top" style={{ backgroundColor: backgroundColors[index % backgroundColors.length] }}>
+              <div
+                className="top"
+                style={{
+                  backgroundColor:
+                    backgroundColors[index % backgroundColors.length],
+                }}
+              >
                 <div className="city-div">
                   <h3>
                     {city.name}, {city.sys.country}
@@ -32,13 +42,18 @@ const Body = () => {
                     , {new Date(city.dt * 1000).toDateString().slice(4)}
                   </span>
                   <div className="cloud-img">
-                    <img src={weatherImages[city.weather[0].description]} alt="" />
+                    <img
+                      src={weatherImages[city.weather[0].description]}
+                      alt=""
+                    />
                     <p>{city.weather[0].description}</p>
                   </div>
                 </div>
 
                 <div className="temp-div">
-                <Link><img className="close"  src={assets.close} alt="" /></Link>
+                  <Link>
+                    <img className="close" src={assets.close} alt="" />
+                  </Link>
                   <h1>{city.main.temp}°C</h1>
                   <p>Temp Min: {city.main.temp_min}°C</p>
                   <p>Temp Max: {city.main.temp_max}°C</p>
@@ -82,10 +97,8 @@ const Body = () => {
                 </div>
               </div>
             </Link>
-                      
           </div>
         ))}
-        
 
         {/* <div className="weather">
             <div className="top">

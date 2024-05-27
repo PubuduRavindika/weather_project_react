@@ -17,23 +17,31 @@ const DetailBody = () => {
             return (
               <div className="weather">
                 <div className="top">
-                <Link to={"/"}><img className="back" src={assets.back} /></Link>
-                  <div className="city-div" >
+                  <Link to={"/"}>
+                    <img className="back" src={assets.back} />
+                  </Link>
+                  <div className="city-div">
                     <h3>
                       {city.name}, {city.sys.country}
                     </h3>
                     <span>
-                      {new Date(city.dt * 1000).toLocaleTimeString("en-US", {
-                        hour: "2-digit",
-                        minute: "2-digit",
-                      }).replace('AM', 'am').replace('PM', 'pm')}
+                      {new Date(city.dt * 1000)
+                        .toLocaleTimeString("en-US", {
+                          hour: "2-digit",
+                          minute: "2-digit",
+                        })
+                        .replace("AM", "am")
+                        .replace("PM", "pm")}
                       , {new Date(city.dt * 1000).toDateString().slice(4)}
                     </span>
                   </div>
 
-                  <div className="temp-div temp-dev-detals" >
+                  <div className="temp-div temp-dev-detals">
                     <div className="cloud-img">
-                      <img src={weatherImages[city.weather[0].description]} alt="" />
+                      <img
+                        src={weatherImages[city.weather[0].description]}
+                        alt=""
+                      />
                       <p>{city.weather[0].description}</p>
                     </div>
 
@@ -60,17 +68,23 @@ const DetailBody = () => {
                   <div className="details-div">
                     <p>
                       Sunrise:{" "}
-                      {new Date(city.sys.sunrise * 1000).toLocaleTimeString(
-                        "en-US",
-                        { hour: "2-digit", minute: "2-digit" }
-                      ).replace('AM', 'am').replace('PM', 'pm')}
+                      {new Date(city.sys.sunrise * 1000)
+                        .toLocaleTimeString("en-US", {
+                          hour: "2-digit",
+                          minute: "2-digit",
+                        })
+                        .replace("AM", "am")
+                        .replace("PM", "pm")}
                     </p>
                     <p>
                       Sunset:{" "}
-                      {new Date(city.sys.sunset * 1000).toLocaleTimeString(
-                        "en-US",
-                        { hour: "2-digit", minute: "2-digit" }
-                      ).replace('AM', 'am').replace('PM', 'pm')}
+                      {new Date(city.sys.sunset * 1000)
+                        .toLocaleTimeString("en-US", {
+                          hour: "2-digit",
+                          minute: "2-digit",
+                        })
+                        .replace("AM", "am")
+                        .replace("PM", "pm")}
                     </p>
                   </div>
                 </div>
